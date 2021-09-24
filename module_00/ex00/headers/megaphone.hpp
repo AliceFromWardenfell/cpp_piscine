@@ -1,5 +1,5 @@
-#ifndef MEGAPHONE_H
-# define MEGAPHONE_H
+#ifndef MEGAPHONE_HPP
+# define MEGAPHONE_HPP
 
 # define OK 0
 
