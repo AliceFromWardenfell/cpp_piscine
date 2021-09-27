@@ -1,8 +1,7 @@
 #ifndef PHONEBOOK_CLASS_HPP
 # define PHONEBOOK_CLASS_HPP
 
-# define SIZE_OF_BOOK 8
-# include "Contact.class.hpp"
+# include "phonebook.hpp"
 
 class PhoneBook
 {

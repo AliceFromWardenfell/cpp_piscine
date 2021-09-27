@@ -10,6 +10,6 @@ void    prompt(void)
 
 int     exit_with_msg(const char *str)
 {
-    std::cout << str << std::endl;
+    std::cout << std::endl << str << std::endl;
     return (OK_EXIT);
 }

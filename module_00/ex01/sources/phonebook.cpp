@@ -8,7 +8,8 @@ int input_loop(void)
     while (true)
     {
         prompt();
-        std::cin >> str;
+        std::cout << "\033[33m$> \033[0m";
+		std::cin >> str;
         if (!str.compare("EXIT"))
             return (exit_with_msg("\033[33;1mThank you for using our phonebook. Bye!\033[0m"));
         if (!str.compare("ADD"))

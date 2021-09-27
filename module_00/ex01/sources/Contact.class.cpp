@@ -18,9 +18,14 @@ void	Contact::assign_filed(int field, std::string value)
 
 void	Contact::display_fileds(void)
 {
-	for (size_t i = 0; i < 5; i++)
+	for (size_t i = 0; i < 3; i++)
 	{
-		std::cout << this->info[i] << " "; //handle
+		if (this->info[i].length() < 11)
+			std::cout << "\033[33m|\033[0m" << std::setw(10) << std::right << this->info[i];
+		else
+		{
+			std::cout << "\033[33m|\033[0m" << this->info[i].substr(0, 9) << ".";
+		}
 	}
 	std::cout << std::endl;
 	return;

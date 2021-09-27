@@ -14,23 +14,23 @@ void    PhoneBook::add_contact(void)
 {	
 	std::string	input;
 
-	std::cout << "Please, enter a first name: ";
+	std::cout << std::endl << "\033[33mPlease, enter a first name: \033[0m";
 	std::cin >> input;
 	this->contacts[this->pos].assign_filed(FIRST_NAME, input);
 
-	std::cout << "Please, enter a last name: ";
+	std::cout << "\033[33mPlease, enter a last name: \033[0m";
 	std::cin >> input;
 	this->contacts[this->pos].assign_filed(LAST_NAME, input);
 
-	std::cout << "Please, enter a nickname: ";
+	std::cout << "\033[33mPlease, enter a nickname: \033[0m";
 	std::cin >> input;
 	this->contacts[this->pos].assign_filed(NICKNAME, input);
 
-	std::cout << "Please, enter a phone number: ";
+	std::cout << "\033[33mPlease, enter a phone number: \033[0m";
 	std::cin >> input;
 	this->contacts[this->pos].assign_filed(PHONE_NUMBER, input);
 
-	std::cout << "Tss... this will be our darkest secret: ";
+	std::cout << "Ssh... this will be our darkest secret: ";
 	std::cin >> input;
 	this->contacts[this->pos].assign_filed(DARKEST_SECRET, input);
 
@@ -42,10 +42,12 @@ void    PhoneBook::add_contact(void)
 
 void	PhoneBook::display_contacts(void)
 {
-	for (size_t i = 0; i < SIZE_OF_BOOK; i++)
+	std::cout << std::endl;
+	// std::cout << "\033[33m   index   first name last  name  nickname \033[0m" << std::endl;
+	for (size_t i = 0; i < SIZE_OF_BOOK; i++) //handle if SEARCH when no contacts
 		if (this->contacts[i].exist())
 		{
-			std::cout << i;
+			std::cout << std::setw(10) << std::right << i;
 			this->contacts[i].display_fileds();
 		}
 }
