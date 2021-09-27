@@ -16,7 +16,7 @@ void	Contact::assign_filed(int field, std::string value)
 	return;
 }
 
-void	Contact::display_fileds(void)
+void	Contact::display_fileds_short(void)
 {
 	for (size_t i = 0; i < 3; i++)
 	{
@@ -31,7 +31,15 @@ void	Contact::display_fileds(void)
 	return;
 }
 
-bool	Contact::exist(void)
+void	Contact::display_fileds_long(void)
+{
+	std::cout << std::endl;
+	for (size_t i = 0; i < 5; i++)
+		std::cout << "\033[33;1m-\033[0m" << this->info[i] << std::endl;
+	return;
+}
+
+bool	Contact::exist(void) const
 {
 	if (this->info[0].empty())
 		return (false);

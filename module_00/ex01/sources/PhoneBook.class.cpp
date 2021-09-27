@@ -1,4 +1,6 @@
 #include "phonebook.hpp"
+#include<ios>
+#include<limits>
 
 PhoneBook::PhoneBook(int val) : pos(val)
 {
@@ -40,14 +42,24 @@ void    PhoneBook::add_contact(void)
 	return;
 }
 
-void	PhoneBook::display_contacts(void)
+void	PhoneBook::display_phonebook(void)
 {
+	int	index = 0;
+
 	std::cout << std::endl;
 	// std::cout << "\033[33m   index   first name last  name  nickname \033[0m" << std::endl;
 	for (size_t i = 0; i < SIZE_OF_BOOK; i++) //handle if SEARCH when no contacts
 		if (this->contacts[i].exist())
 		{
-			std::cout << std::setw(10) << std::right << i;
-			this->contacts[i].display_fileds();
+			std::cout << std::setw(10) << std::right << i + 1;
+			this->contacts[i].display_fileds_short();
 		}
+	std::cout << std::endl << "\033[33mPlease, enter the index of the person: \033[0m";
+	std::cin >> index;
+	if (index > 0 && index < 9 && this->contacts[index - 1].exist())
+		this->contacts[index - 1].display_fileds_long();
+	else
+		std::cout << std::endl << "Sorry, there is no person with index " << index << " \033[33m:(\033[0m" << std::endl;
+	std::cin.clear();
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }

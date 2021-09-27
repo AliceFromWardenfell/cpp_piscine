@@ -15,7 +15,7 @@ int input_loop(void)
         if (!str.compare("ADD"))
             PhoneBook1.add_contact();
         if (!str.compare("SEARCH"))
-            PhoneBook1.display_contacts();
+            PhoneBook1.display_phonebook();
     }
     return (OK);
 }

@@ -12,8 +12,9 @@ public:
     ~Contact(void);
 
 	void	assign_filed(int field, std::string value);
-	void	display_fileds(void);
-	bool	exist(void);
+	void	display_fileds_short(void);
+	void	display_fileds_long(void);
+	bool	exist(void) const;
 
 private:
 
