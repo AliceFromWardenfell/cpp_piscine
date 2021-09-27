@@ -47,6 +47,11 @@ void	PhoneBook::display_phonebook(void)
 	int	index = 0;
 
 	std::cout << std::endl;
+	if (!this->contacts[0].exist())
+	{
+		std::cout << "\033[33mThe phonebook is empty\033[0m" << std::endl;
+		return;
+	}
 	// std::cout << "\033[33m   index   first name last  name  nickname \033[0m" << std::endl;
 	for (size_t i = 0; i < SIZE_OF_BOOK; i++) //handle if SEARCH when no contacts
 		if (this->contacts[i].exist())
