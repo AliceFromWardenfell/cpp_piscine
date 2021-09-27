@@ -11,7 +11,9 @@ vpath %.hpp	$(HDRS_DIR)
 INCLUDES	:= -I$(HDRS_DIR)
 
 SRCS		:= phonebook.cpp \
-			utils.cpp
+			utils.cpp \
+			PhoneBook.class.cpp \
+			Contact.class.cpp
 
 OBJS_DIR	:= .objects
 OBJS		:= $(SRCS:%.cpp=$(OBJS_DIR)/%.o)
