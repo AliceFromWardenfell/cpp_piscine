@@ -11,13 +11,13 @@ public:
     Contact(void);
     ~Contact(void);
 
+	void	assign_filed(int field, std::string value);
+	void	display_fileds(void);
+	bool	exist(void);
+
 private:
 
-    std::string first_name;
-    std::string last_name;
-    std::string nickname;
-    std::string phone_number;
-    std::string darkest_secret;
+    std::string	info[5];
 
 };
 

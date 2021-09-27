@@ -9,15 +9,16 @@ class PhoneBook
 
 public:
 
-    PhoneBook(void);
+    PhoneBook(int val);
     ~PhoneBook(void);
     
     void    add_contact(void);
+	void	display_contacts(void);
 
 private:
 
-    int     pos; // init with init list
-    Contact contact[SIZE_OF_BOOK]; //can be init with init list?
+    int     pos;
+    Contact contacts[SIZE_OF_BOOK];
 
 };
 
