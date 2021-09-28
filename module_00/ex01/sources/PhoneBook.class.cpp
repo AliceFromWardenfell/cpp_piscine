@@ -2,7 +2,7 @@
 #include<ios>
 #include<limits>
 
-PhoneBook::PhoneBook(int val) : pos(val)
+PhoneBook::PhoneBook(void) : pos(0)
 {
 	return;
 }

@@ -2,7 +2,7 @@
 
 int input_loop(void)
 {
-    PhoneBook	PhoneBook1(0);
+    PhoneBook	PhoneBook1;
 	std::string str;
 
     while (true)

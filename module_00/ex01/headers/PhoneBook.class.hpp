@@ -8,7 +8,7 @@ class PhoneBook
 
 public:
 
-    PhoneBook(int val);
+    PhoneBook(void);
     ~PhoneBook(void);
     
     void    add_contact(void);
