@@ -42,7 +42,7 @@ void    PhoneBook::add_contact(void)
 	return;
 }
 
-void	PhoneBook::display_phonebook(void)
+void	PhoneBook::display_phonebook(void) const
 {
 	int	index = 0;
 
@@ -52,8 +52,7 @@ void	PhoneBook::display_phonebook(void)
 		std::cout << "\033[33mThe phonebook is empty\033[0m" << std::endl;
 		return;
 	}
-	// std::cout << "\033[33m   index   first name last  name  nickname \033[0m" << std::endl;
-	for (size_t i = 0; i < SIZE_OF_BOOK; i++) //handle if SEARCH when no contacts
+	for (size_t i = 0; i < SIZE_OF_BOOK; i++)
 		if (this->contacts[i].exist())
 		{
 			std::cout << std::setw(10) << std::right << i + 1;

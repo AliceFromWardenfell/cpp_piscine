@@ -16,7 +16,7 @@ void	Contact::assign_filed(int field, std::string value)
 	return;
 }
 
-void	Contact::display_fileds_short(void)
+void	Contact::display_fileds_short(void) const
 {
 	for (size_t i = 0; i < 3; i++)
 	{
@@ -31,7 +31,7 @@ void	Contact::display_fileds_short(void)
 	return;
 }
 
-void	Contact::display_fileds_long(void)
+void	Contact::display_fileds_long(void) const
 {
 	std::cout << std::endl;
 	for (size_t i = 0; i < 5; i++)

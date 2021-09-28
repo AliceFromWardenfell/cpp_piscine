@@ -12,8 +12,7 @@ public:
     ~PhoneBook(void);
     
     void    add_contact(void);
-	void	display_phonebook(void);
-	void	display_contact(void);
+	void	display_phonebook(void) const;
 
 private:
 
