@@ -1,4 +1,7 @@
 #include "Account.hpp"
+#include <ctime>
+#include <iostream>
+#include <iomanip>
 
 Account::Account(int initial_deposit) : _accountIndex(Account::_nbAccounts), _amount(initial_deposit), _nbDeposits(0), _nbWithdrawals(0)
 {
@@ -16,33 +19,6 @@ Account::~Account(void)
 	return;
 }
 
-void	Account::_displayTimestamp(void) //handle
-{
-	std::cout << "[" << std::time(NULL) << "] ";
-	return;
-}
-
-
-int	Account::getNbAccounts(void)
-{
-	return (Account::_nbAccounts);
-}
-
-int	Account::getTotalAmount(void)
-{
-	return (Account::_totalAmount);
-}
-
-int	Account::getNbDeposits(void)
-{
-	return (Account::_totalNbDeposits);
-}
-
-int	Account::getNbWithdrawals(void)
-{
-	return (Account::_totalNbWithdrawals);
-}
-
 void	Account::displayAccountsInfos(void)
 {
 	_displayTimestamp();
@@ -53,9 +29,6 @@ void	Account::displayAccountsInfos(void)
 				<< std::endl;
 }
 
-
-
-
 void	Account::makeDeposit(int deposit)
 {
 	int		_amount_old;
@@ -65,6 +38,7 @@ void	Account::makeDeposit(int deposit)
 	_amount += deposit;
 	Account::_totalNbDeposits++;
 	Account::_totalAmount += deposit;
+	
 	_displayTimestamp();
 	std::cout	<< "index:" << _accountIndex
 				<< ";p_amount:" << _amount_old
@@ -95,6 +69,7 @@ bool	Account::makeWithdrawal(int withdrawal)
 	_amount -= withdrawal;
 	Account::_totalNbWithdrawals++;
 	Account::_totalAmount -= withdrawal;
+	
 	std::cout	<< "withdrawal:"	<< 	withdrawal		<< ";";
 	std::cout	<< "amount:"		<< _amount			<< ";";
 	std::cout	<< "nb_withdrawals:"<< _nbWithdrawals	<< ";";
@@ -112,6 +87,27 @@ void	Account::displayStatus(void) const
 				<< std::endl;
 }
 
+void	Account::_displayTimestamp(void)
+{
+	const time_t time = std::time(NULL);
+	tm *tm = std::localtime(&time);
+	
+	std::cout	<< "["
+				<< std::setfill('0') << std::setw(4) << tm->tm_year + 1900
+				<< std::setfill('0') << std::setw(2) << tm->tm_mon + 1
+				<< std::setfill('0') << std::setw(2) << tm->tm_mday
+				<< "_"
+				<< std::setfill('0') << std::setw(2) << tm->tm_hour
+				<< std::setfill('0') << std::setw(2) << tm->tm_min
+				<< std::setfill('0') << std::setw(2) << tm->tm_sec
+				<< "] ";
+	return;
+}
+
+int	Account::getNbAccounts(void)	{ return (Account::_nbAccounts); }
+int	Account::getTotalAmount(void)	{ return (Account::_totalAmount); }
+int	Account::getNbDeposits(void)	{ return (Account::_totalNbDeposits); }
+int	Account::getNbWithdrawals(void)	{ return (Account::_totalNbWithdrawals); }
 
 int	Account::_nbAccounts = 0;
 int	Account::_totalAmount = 0;
