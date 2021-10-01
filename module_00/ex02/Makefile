@@ -2,7 +2,7 @@ NAME		:= account
 HDRS		:= Account.hpp
 
 CC			:= clang++
-CFLAGS		:= -Wall -Wextra -Werror -std=c++98 -g
+CFLAGS		:= -Wall -Wextra -Werror -std=c++98
 
 SRCS_DIR	:= sources
 HDRS_DIR	:= headers
