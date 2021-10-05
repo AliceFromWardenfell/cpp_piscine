@@ -3,10 +3,10 @@
 
 Karen::Karen(void)
 {
-	_table["debug"]	= &Karen::debug;
-	_table["info"] = &Karen::info;
-	_table["warning"] = &Karen::warning;
-	_table["error"] = &Karen::error;
+	_table["DEBUG"]	= &Karen::debug;
+	_table["INFO"] = &Karen::info;
+	_table["WARNING"] = &Karen::warning;
+	_table["ERROR"] = &Karen::error;
 	return;
 }
 Karen::~Karen(void)	{ return; }
