@@ -1,6 +1,8 @@
 #include "Fixed.class.hpp"
 #include <iostream>
 
+int const Fixed::_f_bits = 8;
+
 Fixed::Fixed(void)
 	: _value(0)
 {

@@ -12,7 +12,7 @@ class Fixed
 
 	private:
 
-		static const int	num_of_fruct_bits;
+		static const int	_f_bits;
 		int					_value;
 
 	public:
