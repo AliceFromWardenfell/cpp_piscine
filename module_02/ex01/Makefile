@@ -12,9 +12,7 @@ vpath %.hpp	$(HDRS_DIR)
 INCLUDES	:= -I$(HDRS_DIR)
 
 SRCS		:= Main.cpp \
-			Fixed.class.cpp \
-			Utils.cpp \
-			Error.cpp
+			Fixed.class.cpp
 
 
 OBJS_DIR	:= .objects
