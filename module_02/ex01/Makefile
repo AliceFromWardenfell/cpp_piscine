@@ -1,6 +1,5 @@
 NAME		:= test
-HDRS		:= Main.hpp \
-			Fixed.class.hpp \
+HDRS		:= Fixed.class.hpp
 
 CC			:= clang++
 CFLAGS		:= -Wall -Wextra -Werror -std=c++98
