@@ -104,7 +104,7 @@ void	ClapTrap::be_repaired(unsigned int amount)
 		std::cout	<< "\"\033[0m has spent all his \033[37m" 
 					<< this->_energy_points;
 		
-		amount = this->_energy_points; 
+		amount = this->_energy_points * 2; 
 		this->_hitpoints += amount;
 		this->_energy_points = 0;
 	}
