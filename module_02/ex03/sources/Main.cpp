@@ -18,7 +18,7 @@ int		main(void)
 	std::cout << std::endl;
 
 	result = bsp(a, b, c, x);
-	
+
 	std::cout << "Result = " << result;
 	if (result)
 		std::cout << ": point is inside the triangle" << std::endl;
