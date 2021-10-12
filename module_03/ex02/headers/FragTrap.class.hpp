@@ -15,5 +15,5 @@ class FragTrap : public ClapTrap
 		void	attack(std::string const & target) const;
 		void	take_damage(unsigned int amount);
 		void	be_repaired(unsigned int amount);
-		void	highFivesGuys(void);
+		void	high_fives_guys(void);
 };

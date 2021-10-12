@@ -109,7 +109,7 @@ void	FragTrap::be_repaired(unsigned int amount)
 				<< std::endl;
 }
 
-void	FragTrap::highFivesGuys(void)
+void	FragTrap::high_fives_guys(void)
 {
 	std::cout	<< "- frag trap \033[37m\""
 				<< this->_name;

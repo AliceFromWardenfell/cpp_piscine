@@ -12,7 +12,7 @@ int		main(void)
 	ft_zero.take_damage(100);
 	ft_zero.be_repaired(100);
 
-	ft_zero.highFivesGuys();
+	ft_zero.high_fives_guys();
 
 	return 0;
 }
