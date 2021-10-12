@@ -7,8 +7,8 @@ class ClapTrap
 	public:
 		
 		ClapTrap(void);
-		ClapTrap(const char *name);
-		ClapTrap(const char *name, short hitpoints, short energy_points, short attack_damage);
+		ClapTrap(std::string const & name);
+		ClapTrap(std::string const & name, short hitpoints, short energy_points, short attack_damage);
 		ClapTrap(ClapTrap const & instance);
 		virtual ~ClapTrap(void);
 
@@ -16,10 +16,10 @@ class ClapTrap
 
 	protected:
 
-		const char*	_name;
-		short		_hitpoints;
-		short		_energy_points;
-		short		_attack_damage;
+		std::string const	_name;
+		short				_hitpoints;
+		short				_energy_points;
+		short				_attack_damage;
 
 	public:
 

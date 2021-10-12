@@ -12,7 +12,7 @@ ClapTrap::ClapTrap(void)
 	std::cout << "\tDefault clap trap has been planted" << std::endl;
 }
 
-ClapTrap::ClapTrap(const char *name)
+ClapTrap::ClapTrap(std::string const & name)
 	:	_name(name),
 		_hitpoints(10),
 		_energy_points(10),
@@ -24,7 +24,7 @@ ClapTrap::ClapTrap(const char *name)
 	return;
 }
 
-ClapTrap::ClapTrap(const char *name, short hitpoints, short energy_points, short attack_damage)
+ClapTrap::ClapTrap(std::string const & name, short hitpoints, short energy_points, short attack_damage)
 	:	_name(name),
 		_hitpoints(hitpoints),
 		_energy_points(energy_points),

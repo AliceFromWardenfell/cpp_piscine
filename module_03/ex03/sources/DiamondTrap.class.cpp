@@ -4,14 +4,9 @@
 
 // CONSTRUCTORS:
 
-DiamondTrap::DiamondTrap(std::string name)
-	: _name(name)
+DiamondTrap::DiamondTrap(std::string const & name)
+	:	ClapTrap(name + "_clap_name", 100, 50, 30), _name(name)
 {
-	ClapTrap::_name = name.append("_clap_name").c_str();
-	_hitpoints = 100;
-	_energy_points = 50;
-	_attack_damage = 30;
-
 	std::cout	<< "\tDiamond trap \""
 				<< this->_name
 				<< "\" has been planted" << std::endl;
@@ -62,7 +57,7 @@ void	DiamondTrap::be_repaired(unsigned int amount)
 	FragTrap::be_repaired(amount);
 }
 
-void	DiamondTrap::who_am_i() const
+void	DiamondTrap::who_am_i(void) const
 {
 	std::cout	<< "- diamond trap \033[37m\""
 				<< this->_name

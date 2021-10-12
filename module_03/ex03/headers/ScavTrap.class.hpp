@@ -18,6 +18,4 @@ class ScavTrap : virtual public ClapTrap
 		void	be_repaired(unsigned int amount);
 		void	guardGate(void);
 
-		
-
 };

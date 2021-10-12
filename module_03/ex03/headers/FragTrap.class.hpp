@@ -1,4 +1,4 @@
-# pragma once
+#pragma once
 
 #include "ClapTrap.class.hpp"
 
@@ -17,4 +17,5 @@ class FragTrap : virtual public ClapTrap
 		void	take_damage(unsigned int amount);
 		void	be_repaired(unsigned int amount);
 		void	high_fives_guys(void);
+
 };

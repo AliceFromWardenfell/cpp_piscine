@@ -7,7 +7,7 @@ class DiamondTrap : public ScavTrap, public FragTrap
 {
 	public:
 
-		DiamondTrap(std::string name);
+		DiamondTrap(std::string const & name);
 		DiamondTrap(DiamondTrap const & instance);
 		virtual ~DiamondTrap(void);
 
@@ -22,6 +22,6 @@ class DiamondTrap : public ScavTrap, public FragTrap
 		void	attack(std::string const & target) const;
 		void	take_damage(unsigned int amount);
 		void	be_repaired(unsigned int amount);
-		void	who_am_i() const;
+		void	who_am_i(void) const;
 
 };
