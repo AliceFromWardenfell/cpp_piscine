@@ -5,7 +5,7 @@ HDRS		:= ClapTrap.class.hpp \
 			DiamondTrap.class.hpp
 
 CC			:= clang++
-CFLAGS		:= -Wall -Wextra -Werror -std=c++98 -Wshadow
+CFLAGS		:= -Wall -Wextra -Werror -std=c++98 -Wshadow 
 
 SRCS_DIR	:= sources
 HDRS_DIR	:= headers
