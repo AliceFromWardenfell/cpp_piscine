@@ -28,7 +28,7 @@ $(NAME):			$(OBJS)
 					@$(CC) $(OBJS) $(CFLAGS) $(INCLUDES) -o $@
 					@echo "$(WHITE_B)'$(NAME)'$(BOLD) has been created/updated.$(DEF)"
 
-$(OBJS_DIR)/%.o:	%.cpp $(HDRS) | $(DEPS_DIR) $(OBJS_DIR) 
+$(OBJS_DIR)/%.o:	%.cpp | $(DEPS_DIR) $(OBJS_DIR) 
 					@echo "Assembling $<..."
 					@$(CC) $(CFLAGS) $(DEP_FLAGS) $(INCLUDES) -c $< -o $@
 

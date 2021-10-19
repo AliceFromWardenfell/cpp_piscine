@@ -30,7 +30,7 @@ $(NAME):			$(OBJS)
 					@$(CC) $(OBJS) $(CFLAGS) $(INCLUDES) -o $@
 					@echo "$(WHITE_B)'$(NAME)'$(BOLD) has been created/updated.$(DEF)"
 
-$(OBJS_DIR)/%.o:	%.cpp $(HDRS) | $(DEPS_DIR) $(OBJS_DIR) 
+$(OBJS_DIR)/%.o:	%.cpp | $(DEPS_DIR) $(OBJS_DIR) 
 					@echo "Assembling $<..."
 					@$(CC) $(CFLAGS) $(DEP_FLAGS) $(INCLUDES) -c $< -o $@
 
@@ -39,7 +39,7 @@ $(OBJS_DIR):
 					@echo "$(BOLD)Directory '$(OBJS_DIR)' has been created.$(DEF)"
 
 clean:
-					@rm -rf $(OBJS) $(DEPS)
+					@rm -rf $(OBJS) $(DEPS) $(OBJS_DIR)
 					@echo "$(WHITE)$(NAME): $(BOLD)Object files have been cleaned.$(DEF)"
 
 fclean:				clean
