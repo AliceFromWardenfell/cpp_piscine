@@ -14,7 +14,7 @@ class Form
 		Form(void);
 		Form(std::string const & name, unsigned int sign_grade, unsigned int exec_grade);
 		Form(Form const & instance);
-		~Form(void);
+		virtual ~Form(void);
 
 		class GradeTooHighException : public std::exception
 		{
