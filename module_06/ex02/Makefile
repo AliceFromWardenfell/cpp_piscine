@@ -1,12 +1,18 @@
 NAME		:= test
+HDRS		:= header.hpp
 
 CC			:= clang++
 CFLAGS		:= -Wall -Wextra -Werror -std=c++98
+DEP_FLAGS	:= -MP -MMD
 
 SRCS_DIR	:= sources
+HDRS_DIR	:= headers
 vpath %.cpp	$(SRCS_DIR)
+vpath %.hpp	$(HDRS_DIR)
+INCLUDES	:= -I$(HDRS_DIR)
 
-SRCS		:= main.cpp
+SRCS		:= main.cpp \
+			functions.cpp
 
 OBJS_DIR	:= .objects
 OBJS		:= $(SRCS:%.cpp=$(OBJS_DIR)/%.o)
@@ -19,12 +25,12 @@ all:
 
 $(NAME):			$(OBJS)
 					@echo "$(BOLD)Linking files...$(DEF)"
-					@$(CC) $(OBJS) $(CFLAGS) -o $@
+					@$(CC) $(OBJS) $(CFLAGS) $(INCLUDES) -o $@
 					@echo "$(WHITE_B)'$(NAME)'$(BOLD) has been created/updated.$(DEF)"
 
 $(OBJS_DIR)/%.o:	%.cpp | $(OBJS_DIR) 
 					@echo "Assembling $<..."
-					@$(CC) $(CFLAGS) -c $< -o $@
+					@$(CC) $(CFLAGS) $(DEP_FLAGS) $(INCLUDES) -c $< -o $@
 
 $(OBJS_DIR):
 					@mkdir -p $@
@@ -41,6 +47,8 @@ fclean:				clean
 re:					fclean all
 
 .PHONY:				all clean fclean re
+
+-include $(DEPS)
 
 BOLD	:= \033[0;1m
 WHITE_B	:= \033[1;37m
