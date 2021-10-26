@@ -1,5 +1,5 @@
 NAME		:= test
-HDRS		:= functions.hpp
+HDRS		:= iter.hpp
 
 CC			:= clang++
 CFLAGS		:= -Wall -Wextra -Werror -std=c++98
