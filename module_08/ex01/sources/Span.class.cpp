@@ -20,6 +20,8 @@ Span::~Span(void) {}
 
 Span&	Span::operator=(Span const & instance)
 {
+	if (this == &instance)
+		return *this;
 	_capacity = instance._capacity;
 	_storage = instance._storage;
 	return *this;
